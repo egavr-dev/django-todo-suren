@@ -1,3 +1,7 @@
+Ссылка на документацию Django официальный сайт там есть
+пример и упражнения, и можно его пройти.
+[link](https://docs.djangoproject.com/en/5.1/)
+ 
 - `which python` - Проверка какой Python используется в терминале Linux.
 - `where python` - Проверка, какой Python используется в терминале windows
 - `python -V` - Проверка версии Python 
