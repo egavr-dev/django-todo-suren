@@ -98,6 +98,11 @@
 `path("", TemplateView.as_view(template_name="index.html"))`
 Так-как мы уже указали что шаблоны находятся в папке templates
 
+Теперь перезапустив наш сервер
+`python manage.py runserver`
+
+После чего увидим нашу простенькую страничку по адресу 
+[link](http://127.0.0.1:8000)
 
 
 
