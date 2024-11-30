@@ -54,7 +54,24 @@ git репозиторий в нашей папке с проектом. Все 
 Жмем Create repository, после чего, создастся удаленный репозиторий и нам 
 выдадут инструкцию о том как нам отправить в него файлы которые с компьютера.
 
+…or create a new repository on the command line
 
+echo "# django-todo-suren" >> README.md 
+Если нужно инициализировать проект предварительно
+
+`git init`
+`git add README.md`
+`git commit -m "first commit"`
+`git branch -M main`
+`git remote add origin https://github.com/egavr-dev/django-todo-suren.git`
+`git push -u origin main`
+
+…or push an existing repository from the command line
+Если проект уже ранее проинициализирован (как в нашем случае)
+
+`git remote add origin https://github.com/egavr-dev/django-todo-suren.git`
+`git branch -M main`
+`git push -u origin main`
 
 
 
