@@ -73,14 +73,3 @@ echo "# django-todo-suren" >> README.md
 `git branch -M main`
 `git push -u origin main`
 
-
-
-
-
-
-
-
-
-
-
-
