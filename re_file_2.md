@@ -52,13 +52,12 @@ git репозиторий в нашей папке с проектом. Все 
 создавали. И уже инициализировали git.
 
 Жмем Create repository, после чего, создастся удаленный репозиторий и нам 
-выдадут инструкцию о том как нам отправить в него файлы которые с компьютера.
+выдадут инструкцию о том как нам отправить в него файлы с компьютера.
 
 …or create a new repository on the command line
-
-echo "# django-todo-suren" >> README.md 
 Если нужно инициализировать проект предварительно
 
+`echo "# django-todo-suren" >> README.md`
 `git init`
 `git add README.md`
 `git commit -m "first commit"`
