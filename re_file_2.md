@@ -113,7 +113,23 @@ extends позволяет расширить базовый шаблон (по 
 расширяемым. Можно расширять любой шаблон, и для этого нужно сделать
 подсказки, для django, добавим некоторые блоки которые мы будем расширять
 файл templates/base.html
-``
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}
+    Base Title
+  {% endblock title %}</title>
+</head>
+<body>
+  {% block body %}
+  
+  {% endblock body %}
+</body>
+</html>
+```
+А именно блоки title и body подготовим их к изменениям.
 
 
 
