@@ -266,9 +266,72 @@ base.html и переопределяет его содержимое.
 Мы все это не хотим повторять, и писать в базовом шаблоне это все тоже 
 может становиться сложным. Поэтому мы хотим все разделять.
 
-### Рассмотрим подключение различных частей кода 
+### Рассмотрим подключение различных частей кода с помошью блока include
 Мы создадим отдельный компонент, отдельный маленький кусочек страницы,
 в котором также используются правила наследования шаблона, и мы выполним,
 подключение этого кусочка в наш основной шаблон. Для этого создадим новую 
 папку (в папке templates), назовем ее (components) для понимания, что там не шаблоны, а именно
 компоненты (кусочки). И внутри этой папки создадим файл navbar.html
+Имена могут быть любыми, главное потом понимать, что в них находится.
+
+Теперь переместим наш навбар из базового шаблона base.html
+в наш компонент
+файл base.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}
+    Base Title
+  {% endblock title %}</title>
+</head>
+<body>
+
+  {% block body %}
+    Base body!
+  {% endblock body %}
+  <footer>
+    &copy; Django TODO App
+  </footer>
+</body>
+</html>
+```
+
+А файл navbar.html
+```html
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+```
+В этот файл можно добавить что угодно из блоков now как в примерах с временем,
+но в нашем случае не будем этого делать.
+
+Нам нужно подключить navbar.html, в базовый шаблон base.html 
+для этого используем блок include, которому передаем путь до файла 
+(компонента components/navbar.html)
+файл base.html примет вид
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}
+    Base Title
+  {% endblock title %}</title>
+</head>
+<body>
+  {% include "components/navbar.html" %}
+  {% block body %}
+    Base body!
+  {% endblock body %}
+  <footer>
+    &copy; Django TODO App
+  </footer>
+</body>
+</html>
+```
+
