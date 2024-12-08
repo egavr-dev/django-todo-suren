@@ -200,4 +200,31 @@ path("", TemplateView.as_view(template_name="index.html"))
 Можно сказать так, файл index.html, наследует то что есть в базовом файле 
 base.html и переопределяет его содержимое.
 
+Это важно понимать, ведь например, у нас будет еще несколько страниц, и
+у них может быть, какая-то, часть, такая же как на этой.
+
+Например, мы считаем что, обязательно на странице должен быть футер (footer)
+и в нем должна быть информация о том что это за проект.
+
+Изменим наш файл base.html
+```html
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}
+    Base Title
+  {% endblock title %}</title>
+</head>
+<body>
+  {% block body %}
+    Base body!
+  {% endblock body %}
+  <footer>
+    &copy; Django TODO App
+  </footer>
+</body>
+</html>
+```
+
+
+
 
