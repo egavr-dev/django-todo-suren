@@ -153,7 +153,8 @@ Base body
 на месте тега
 `{% extends "base.html" %}`
 будет подставлено, то что у нас в файле base.html (то-есть в базовом шаблоне)
-для того что-бы увидеть разницу файле base.html изменим body на `Base body!`
+для того что-бы увидеть разницу файле base.html изменим body на 
+`Base body!`
 
 И изменим файл urls.py и "отри-суем" снова index.html
 изменим список urlpatterns
@@ -163,11 +164,40 @@ path("", TemplateView.as_view(template_name="index.html"))
 
 Файл index.html выглядит так
 ```html
-{% extends "base.html" %}`
+{% extends "base.html" %}
 ```
 
+Соответственно, все что было в файле base.html попало в файл index.html
+Теперь нам нужно в index.html прописать что-то свое, что бы изменить
+базовый шаблон. Например, что бы был title не
+`Base Title`
+а например
+`TODO App Index`
 
+Еще дополнительно поменяем содержимое блока body с
+`Base body!`
+на то что у нас было ранее со временем
 
+Для этого перепишем файл index.html в котором, добавим блок. Имя блока 
+такое же как мы использовали в базовом шаблоне который мы расширяем.
+```html
+{% extends "base.html" %}
 
+{% block title %}
+  TODO App Index
+{% endblock title %}
+
+{% block body %}
+<h1>Welcome to our TODO App!</h1>
+<h2>Work in progress</h2>
+<h3>It is {% now "jS F Y H:i" %}</h3>
+<div>
+  <div>
+    abc
+  </div>
+{% endblock body %}
+```
+Можно сказать так, файл index.html, наследует то что есть в базовом файле 
+base.html и переопределяет его содержимое.
 
 
