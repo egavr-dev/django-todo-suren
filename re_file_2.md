@@ -154,10 +154,16 @@ Base body
 `{% extends "base.html" %}`
 будет подставлено, то что у нас в файле base.html (то-есть в базовом шаблоне)
 для того что-бы увидеть разницу файле base.html изменим body на `Base body!`
+
+И изменим файл urls.py и "отри-суем" снова index.html
+изменим список urlpatterns
+```python
+path("", TemplateView.as_view(template_name="index.html"))
+```
+
+Файл index.html выглядит так
 ```html
-
-
-
+{% extends "base.html" %}`
 ```
 
 
