@@ -124,7 +124,7 @@ extends позволяет расширить базовый шаблон (по 
 </head>
 <body>
   {% block body %}
-  
+    Base body
   {% endblock body %}
 </body>
 </html>
